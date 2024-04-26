@@ -1,0 +1,96 @@
+{
+  "name": "taksh_web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/interaction": "^6.1.11",
+    "@fullcalendar/list": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@fullcalendar/timegrid": "^6.1.11",
+    "@headlessui/react": "^1.7.17",
+    "@mui/icons-material": "^5.15.1",
+    "@mui/material": "^5.15.4",
+    "@mui/system": "^5.15.1",
+    "@mui/x-date-pickers": "^6.19.0",
+    "@phosphor-icons/react": "^2.0.15",
+    "@reduxjs/toolkit": "^2.0.1",
+    "@tabler/icons": "^1.84.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.2",
+    "css-loader": "^6.8.1",
+    "dayjs": "^1.11.10",
+    "firebase": "^10.9.0",
+    "lodash": "^4.17.21",
+    "lottie-react": "^2.4.0",
+    "moment": "^2.30.1",
+    "react": "^18.2.0",
+    "react-animations": "^1.0.0",
+    "react-apexcharts": "^1.4.1",
+    "react-big-calendar": "^1.10.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-countup": "^6.5.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^14.0.1",
+    "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-otp-input": "^3.1.1",
+    "react-player": "^2.14.1",
+    "react-redux": "^9.0.4",
+    "react-router-dom": "^6.20.1",
+    "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.0",
+    "react-slick": "^0.30.1",
+    "react-toastify": "^10.0.4",
+    "redux-persist": "^6.0.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "simplebar": "^6.2.5",
+    "simplebar-react": "^3.2.4",
+    "slick-carousel": "^1.8.1",
+    "style-loader": "^3.3.3",
+    "styled-components": "^6.1.8",
+    "swiper": "^11.0.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start:dev": "npm run copy-env:dev && cross-env STAGE=dev react-scripts start",
+    "start:qa": "npm run copy-env:qa && cross-env STAGE=qa react-scripts start",
+    "start:prod": "npm run copy-env:prod && cross-env STAGE=prod react-scripts start",
+    "copy-env:dev": "cp ./src/env/.env.dev .env",
+    "copy-env:qa": "cp ./src/env/.env.qa .env",
+    "copy-env:prod": "cp ./src/env/.env.prod .env",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "tailwindcss": "^3.3.6"
+  }
+}

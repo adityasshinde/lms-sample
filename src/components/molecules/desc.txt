@@ -1,0 +1,6 @@
+login input for email & phone
+buttom alert
+course card
+category card
+navbar *optional
+radio list item

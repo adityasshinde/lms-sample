@@ -1,0 +1,4 @@
+fiter tool bar / alert
+question view/details
+category slider
+home featured courses
