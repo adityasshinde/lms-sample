@@ -37,7 +37,7 @@ const NavHeader = () => {
 
   const AppBarStyled = styled(AppBar)(({ theme }) => ({
     boxShadow: "none",
-    background: theme.palette.background.paper,
+    background: "#070F2B",
     justifyContent: "center",
     position: "fixed",
     backdropFilter: "blur(4px)",
@@ -111,7 +111,7 @@ const NavHeader = () => {
             <ScrollLink
               style={{
                 cursor: "pointer",
-                color: "#2B527A",
+                color: "white",
                 fontWeight: "bold",
               }}
               to="coursetab"
@@ -126,7 +126,7 @@ const NavHeader = () => {
             <ScrollLink
               style={{
                 cursor: "pointer",
-                color: "#2B527A",
+                color: "white",
                 fontWeight: "bold",
               }}
               to="about"
@@ -140,7 +140,7 @@ const NavHeader = () => {
             <ScrollLink
               style={{
                 cursor: "pointer",
-                color: "#2B527A",
+                color: "white",
                 fontWeight: "bold",
               }}
               to="download"
@@ -154,7 +154,7 @@ const NavHeader = () => {
             <ScrollLink
               style={{
                 cursor: "pointer",
-                color: "#2B527A",
+                color: "white",
                 fontWeight: "bold",
               }}
               to="educators"
@@ -168,7 +168,7 @@ const NavHeader = () => {
             <ScrollLink
               style={{
                 cursor: "pointer",
-                color: "#2B527A",
+                color: "white",
                 fontWeight: "bold",
               }}
               to="contact"

@@ -1,46 +1,49 @@
-import { ChevronRight } from "@mui/icons-material";
-import { Box, Grid, Typography, useMediaQuery, Skeleton } from "@mui/material";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons";
-import { useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { useGetBannersQuery } from "../../store/api/homeApi";
+import { Box, Divider, Grid, Typography, useMediaQuery, } from "@mui/material";
 import GradientLink from "../form/GradientLink";
-import Loader from "../ui/Loader";
+import hero from '../../asset/images/hero.png';
+import grp from '../../asset/images/grp.png';
+import f1 from '../../asset/images/01.png';
+import f2 from '../../asset/images/02.png';
+import f3 from '../../asset/images/03.png';
+import l1 from '../../asset/images/l1.png';
+import l2 from '../../asset/images/l2.png';
 
 const HeroSection = () => {
-  const sliderRef = useRef(null);
-  const { data: banners } = useGetBannersQuery();
-  const settings = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  const nextSlide = () => {
-    sliderRef.current.slickNext(); // Go to the next slide
+
+  const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
+  const dotsContainerStyle = {
+    position: 'absolute',
+    width: '100vw',
+    height: '100vh',
+    pointerEvents: 'none', // So that the dots don't interfere with mouse events on underlying elements
   };
 
-  const previousSlide = () => {
-    sliderRef.current.slickPrev(); // Go to the previous slide
+  const dotStyle = {
+    width: '4px',
+    height: '4px',
+    backgroundColor: '#12304c', // Color of the dots
+    borderRadius: '50%',
+    position: 'absolute',
   };
-  const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
+
+  const generateDots = () => {
+    const dots = [];
+    const gridSize = 70; // Adjust the grid size as needed
+    const dotSpacing = 20; // Adjust the spacing between dots as needed
+
+    for (let x = 0; x <= gridSize; x++) {
+      for (let y = 0; y <= gridSize; y++) {
+        const left = x * dotSpacing;
+        const top = y * dotSpacing;
+
+        dots.push(
+          <div key={`dot-${x}-${y}`} style={{ ...dotStyle, left, top }}></div>
+        );
+      }
+    }
+
+    return dots;
+  };
   return (
     <Box
       sx={{
@@ -49,168 +52,102 @@ const HeroSection = () => {
         position: "relative",
         display: "flex",
         alignItems: lgUp ? "center" : "start",
-        justifyContent: "center",
+        justifyContent: "start",
       }}
     >
-      {/* <img
-        src={back}
-        className="hidden lg:block"
-        style={{
-          position: "absolute",
-          height: "100%",
-          width: "50%",
-          top: 0,
-          right: 0,
-        }}
-      /> */}
-      <Grid container spacing={1} alignItems="center">
-        {/* <Grid
-                    item
-                    xs={12}
-                    sx={{ display: { xs: "block", md: "none" }, my: '2rem' }}
-                >
-                    <img
-                        src={hm}
-                        style={{
-                            height: "100%",
-                            width: "100%",
-                        }}
-                    />
-                </Grid> */}
-        <Grid item padding="0 !important" xs={12}>
+       <div style={dotsContainerStyle}>{generateDots()}</div>
+      <Grid container spacing={1} alignItems="center" position='relative'>
+        <Grid item xs={7}>
           <Box sx={{ mx: "auto", my: "3rem" }}>
             <Typography
-              variant="h1"
-              style={{ fontWeight: "800" }}
-              fontSize="3rem"
-              color="#4B4B4D"
-              textAlign={"center"}
+              variant="body1"
+              color="white"
+              sx={{
+                mt: 2,
+                fontSize: "28px",
+                textAlign: "left",
+                fontWeight: "400",
+                lineHeight: '35.28px',
+              }}
             >
-              Unlock Your
-              <br />
-              Potential with <br />
-              <Typography
-                variant="h1"
-                fontSize="3rem"
-                component="span"
-                sx={{ color: "primary.main" }}
-                style={{ fontWeight: "800" }}
-              >
-                Interactive Learning!
-              </Typography>
+              live cohort course 2.0
+            </Typography>
+            <Typography
+              fontWeight='1000'
+              fontSize="90px"
+              color="white"
+              lineHeight='109.71px'
+              textAlign={"left"}
+            >
+              VIDEO EDITING
             </Typography>
             <Typography
               variant="body1"
-              color="#4B4B4D"
+              color="white"
+              sx={{
+                mt: 2,
+                fontSize: "28px",
+                textAlign: "left",
+                fontWeight: "400",
+                lineHeight: '35.28px',
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'start',
+                gap:'10px'
+              }}
+            >
+              from basics to mastery <Divider sx={{ width: "300px",mt:'0.5rem', height: "2px", backgroundColor: "white" }} />
+            </Typography>
+            <Typography
+              variant="body1"
+              color="white"
               sx={{
                 mt: 2,
                 fontSize: "1rem",
-                textAlign: "center",
-                fontWeight: "bold",
+                textAlign: "left",
+                fontWeight: "400",
               }}
             >
-              Unlock a world of knowledge with top-notch <br /> instructors
-              guiding your way for CUET Examination.
+              An interesting platform that will teach you in more<br /> an interactive way
             </Typography>
-            <Box mx={{ xs: "auto" }} sx={{ mt: 4, width: "200px" }}>
+            <Box sx={{ mt: 4, width: "200px" }}>
               <GradientLink
-                text="Get Started"
+                text="Enroll Now"
                 to="/courses"
-                appendComponent={
-                  <ChevronRight
-                    sx={{
-                      color: "black",
-                      borderRadius: "4px",
-                      fontSize: "1rem",
-                      position: "absolute",
-                      right: "4px",
-                      height: "85%",
-                      width: "30px",
-                      backgroundColor: "white",
-                    }}
-                  />
-                }
               />
             </Box>
+            <Typography
+              variant="body1"
+              color="white"
+              sx={{
+                mt: 2,
+                fontSize: "18px",
+                textAlign: "left",
+                fontWeight: "300",
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'start',
+                lineHeight:'30px',
+                gap:'10px'
+              }}
+            > <img src={grp} />
+              10k+ students enrolled
+            </Typography>
           </Box>
         </Grid>
-        {banners ? (
-          <Grid
-            item
-            xs={12}
-            // sx={{ display: { xs: "none", md: "block" } }}
-            justifyContent="center"
-            position="relative"
-          >
-            <Grid item width="90%" mx="auto" position="relative">
-              <Slider ref={sliderRef} {...settings}>
-                {banners?.map((item) => (
-                  <div key={item._id} className="slick-slide" style={{ height: '70vh' }}>
-                    {/* <div className="bg-[#ffffff] w-[90%] h-[50vh] rounded border border-gray-200"></div> */}
-                    <img
-                      src={item.imageUrl}
-                      alt={`Slide ${item._id}`}
-                      style={{
-                        width: "90%",
-                        margin: "0 1rem",
-                        aspectRatio: "16/9",
-                      }}
-                    />
-                  </div>
-                ))}
-              </Slider>
-              <div
-                onClick={previousSlide}
-                aria-label="Previous"
-                style={{
-                  cursor: "pointer",
-                  position: "absolute",
-                  top: "45%",
-                  zIndex: 2,
-                  left: lgUp ? "-2.5rem" : "-1rem",
-                  padding: "4px",
-                  borderRadius: "50%",
-                  marginRight: "8px",
-                }}
-                className="bg-[#c6e0f7] hover:bg-[#207EB8] hover:text-white"
-              >
-                <IconChevronLeft />
-              </div>
-              <div
-                onClick={nextSlide}
-                aria-label="Next"
-                className="bg-[#c6e0f7] hover:bg-[#207EB8] hover:text-white"
-                style={{
-                  cursor: "pointer",
-                  position: "absolute",
-                  top: "45%",
-                  zIndex: 2,
-                  right: lgUp ? "-2rem" : "-1rem",
-                  padding: "4px",
-                  borderRadius: "50%",
-                  marginRight: "8px",
-                }}
-              >
-                <IconChevronRight />
-              </div>
-            </Grid>
-          </Grid>
-        ) : (
-          <Box
-                sx={{
-                  margin: "auto",
-                  overflow: "hidden",
-                  width: "80%",
-                  display: "flex",
-                  justifyContent: "space-around",
-                }}
-              >
-                <Skeleton animation="wave" height="300px" width="300px" />
-                <Skeleton animation="wave" height="300px" width="300px" />
-                <Skeleton animation="wave" height="300px" width="300px" />
-              </Box>
-        )}
+        <Grid item xs={5} >
+          <img src={hero} />
+          <img src={f1} style={{position:'absolute',width:'150px',top:'70%',right:'35%'}} />
+          <img src={f2} style={{position:'absolute',top:'40%',right:'0%',width:'140px'}} />
+          <img src={f3} style={{position:'absolute',width:'180px',right:'25%'}} />
+        </Grid>
       </Grid>
+      <img src={l1} style={{position:'absolute',top:'5%',left:'5%'}} />
+      <img src={l1} style={{position:'absolute',top:'10%',right:'3%'}} />
+      <img src={l1} style={{position:'absolute',bottom:'3%',left:'40%'}} />
+      <img src={l2} style={{position:'absolute',bottom:'5%',right:'0%'}} />
+      <img src={l2} style={{position:'absolute',bottom:'0%',left:'0%'}} />
+
     </Box>
   );
 };

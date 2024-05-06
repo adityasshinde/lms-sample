@@ -17,7 +17,8 @@ const GradientLink = ({
     >
       <Button
         sx={{
-          backgroundImage: "linear-gradient(to right, #2B527A, #207EB8)",
+          // backgroundImage: "linear-gradient(to right, #2B527A, #207EB8)",
+          backgroundColor:'#6874BB',
           color: "white",
           padding:"8px 2px",
           cursor: "pointer",

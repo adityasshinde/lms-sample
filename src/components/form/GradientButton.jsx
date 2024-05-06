@@ -8,7 +8,8 @@ const GradientButton = ({ text, onClick, type,disable,endIcon,startIcon}) => {
       onClick={onClick}
       disabled={disable}
       sx={{
-        backgroundImage: 'linear-gradient(to right, #2B527A, #207EB8)',
+        // backgroundImage: 'linear-gradient(to right, #2B527A, #207EB8)',
+        backgroundColor: '#6874BB',
         color: 'white !important',
         padding: '8px 24px',
         margin: '0',

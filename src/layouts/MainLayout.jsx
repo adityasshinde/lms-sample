@@ -17,6 +17,7 @@ const MainWrapper = styled("div")(() => ({
   display: "flex",
   minHeight: "100vh",
   width: "100vw",
+  backgroundColor: "#070F2B",
 }));
 
 const PageWrapper = styled("div")(() => ({

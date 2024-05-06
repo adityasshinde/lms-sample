@@ -25,9 +25,9 @@ const HomePage = () => {
   return (
     <div className="mx-4 md:mx-8 lg:mx-20">
       <HeroSection />
+      <AboutSection />
       <CounterSection />
       <CourseTab />
-      <AboutSection />
       <CategorySlider />
       <CalendarFeature />
       <DownloadComponent />

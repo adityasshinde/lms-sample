@@ -10,7 +10,8 @@ module.exports = {
         "207EB8": "#207EB8"
       },
       fontFamily: {
-        global: ["Plus Jakarta Sans", "sans-serif"],
+        global: ["Montserrat", "sans-serif"],
+        prev: ["Plus Jakarta Sans", "sans-serif"],
       },
     },
   },
