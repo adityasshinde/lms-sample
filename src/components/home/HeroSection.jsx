@@ -11,39 +11,39 @@ import l2 from '../../asset/images/l2.png';
 const HeroSection = () => {
 
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
-  const dotsContainerStyle = {
-    position: 'absolute',
-    width: '100vw',
-    height: '100vh',
-    pointerEvents: 'none', // So that the dots don't interfere with mouse events on underlying elements
-  };
+  // const dotsContainerStyle = {
+  //   position: 'absolute',
+  //   width: '100vw',
+  //   height: '100vh',
+  //   pointerEvents: 'none', // So that the dots don't interfere with mouse events on underlying elements
+  // };
 
-  const dotStyle = {
-    width: '4px',
-    height: '4px',
-    backgroundColor: '#12304c', // Color of the dots
-    borderRadius: '50%',
-    position: 'absolute',
-  };
+  // const dotStyle = {
+  //   width: '4px',
+  //   height: '4px',
+  //   backgroundColor: '#12304c', // Color of the dots
+  //   borderRadius: '50%',
+  //   position: 'absolute',
+  // };
 
-  const generateDots = () => {
-    const dots = [];
-    const gridSize = 70; // Adjust the grid size as needed
-    const dotSpacing = 20; // Adjust the spacing between dots as needed
+  // const generateDots = () => {
+  //   const dots = [];
+  //   const gridSize = 70; // Adjust the grid size as needed
+  //   const dotSpacing = 20; // Adjust the spacing between dots as needed
 
-    for (let x = 0; x <= gridSize; x++) {
-      for (let y = 0; y <= gridSize; y++) {
-        const left = x * dotSpacing;
-        const top = y * dotSpacing;
+  //   for (let x = 0; x <= gridSize; x++) {
+  //     for (let y = 0; y <= gridSize; y++) {
+  //       const left = x * dotSpacing;
+  //       const top = y * dotSpacing;
 
-        dots.push(
-          <div key={`dot-${x}-${y}`} style={{ ...dotStyle, left, top }}></div>
-        );
-      }
-    }
+  //       dots.push(
+  //         <div key={`dot-${x}-${y}`} style={{ ...dotStyle, left, top }}></div>
+  //       );
+  //     }
+  //   }
 
-    return dots;
-  };
+  //   return dots;
+  // };
   return (
     <Box
       sx={{
@@ -55,7 +55,7 @@ const HeroSection = () => {
         justifyContent: "start",
       }}
     >
-       <div style={dotsContainerStyle}>{generateDots()}</div>
+       {/* <div style={dotsContainerStyle}>{generateDots()}</div> */}
       <Grid container spacing={1} alignItems="center" position='relative'>
         <Grid item xs={7}>
           <Box sx={{ mx: "auto", my: "3rem" }}>

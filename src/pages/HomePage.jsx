@@ -11,6 +11,9 @@ import Educators from "../components/home/Educators";
 import HeroSection from "../components/home/HeroSection";
 import { useGetCoursesQuery } from "../store/api/courseApi";
 import { flushFilters, setCourses } from "../store/slices/courseSlice";
+import CourseOverview from "../components/home/CourseOverview";
+import Roadmap from "../components/home/Roadmap";
+import PromoVideo from "../components/home/PromoVideo";
 
 const HomePage = () => {
   //We have course tab in home itself
@@ -26,6 +29,9 @@ const HomePage = () => {
     <div className="mx-4 md:mx-8 lg:mx-20">
       <HeroSection />
       <AboutSection />
+      <PromoVideo />
+      <CourseOverview/>
+      <Roadmap/>
       <CounterSection />
       <CourseTab />
       <CategorySlider />
